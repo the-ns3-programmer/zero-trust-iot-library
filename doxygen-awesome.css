@@ -620,7 +620,8 @@ a.anchor {
     font-size: var(--navigation-font-size);
     height: calc(var(--searchbar-height) - 2px);
     background: transparent;
-    width: calc(var(--searchbar-width) - 64px);
+    /*width: calc(var(--searchbar-width) - 64px);*/
+    width: calc(var(--searchbar-width) - 75px);
 }
 
 .MSearchBoxActive #MSearchField {
