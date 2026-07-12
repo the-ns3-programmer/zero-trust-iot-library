@@ -1,0 +1,23 @@
+nav:
+  - Home: index.md
+  - Model:
+      - Overview: model/index.md
+      - Identity Registry: model/zt-identity-registry.md
+      - Hash Utilities: model/zt-hash-utils.md
+      - Certificate Authority: model/zt-certificate.md
+      - Policy Engine: model/zt-policy-engine.md
+      - Context Drift Validator: model/zt-context-drift-validator.md
+      - Dynamic Trust Scorer: model/zt-dynamic-trust-scorer.md
+      - Encryption Utilities: model/zt-encryption-utils.md
+      - TLS Handshake: model/zt-tls-handshake.md
+      - IPv4 Enforcement Hook: model/zt-ipv4-hook.md
+      - Logger: model/zt-logger.md
+  - Examples:
+      - Overview: examples/index.md
+      - Context Drift Test: examples/context-drift-test.md
+      - Micro-Segmentation Test: examples/micro-segmentation-test.md
+      - Dynamic Trust Scorer Test: examples/trust-scorer-test.md
+      - "Man-in-the-Middle: Attack & Mitigation": examples/mitm.md
+      - "Identity Spoofing: Attack & Mitigation": examples/spoofing.md
+      - "Unauthorized Access: Attack & Mitigation": examples/unauthorized-access.md
+  - License: license.md

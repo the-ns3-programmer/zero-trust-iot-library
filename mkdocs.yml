@@ -1,41 +1,57 @@
 site_name: Zero Trust IoT Library
 site_description: Centralized technical documentation
-repo_url: https://github.com/arun-dot-com/automated-documentation
-repo_name: automated-documentation
+repo_url: https://github.com/the-ns3-programmer/zero-trust-iot
+repo_name: zero-trust-iot
 edit_uri: edit/main/docs/
 
 theme:
   name: material
+  logo: asset/logo.png
+  favicon: asset/logo.png
   palette:
     - scheme: default
-      primary: green
-      accent: green
+      primary: light green
+      accent: light green
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: green
-      accent: green
+      primary: teal
+      accent: teal
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+
+
   features:
+    - navigation.footer
     - navigation.instant
     - navigation.tracking
     - navigation.top
+    #- navigation.tabs
     - navigation.sections
+    #- navigation.expand
     - search.suggest
     - search.highlight
     - content.code.copy
-extra:
-  logo: asset/logo.png
-  #favicon: assets/zerotrustiot-favicon.ico
 plugins:
   - search
+extra:
+  #generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/the-ns3-programmer/zero-trust-iot
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:arunsanthosh.rashok@gmail.com
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/arundotcom/ns3-cryptopp
+copyright: Copyright &copy; 2026 - the-ns3-programmer❤️
 
-nav:
-  - Home: index.md
-  - Activity Log: activity.md
+  
+
+hooks:
+  - hooks/load_nav.py
+  
 
 markdown_extensions:
   - admonition

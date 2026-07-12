@@ -30,10 +30,10 @@ anywhere, then builds and deploys the MkDocs site to GitHub Pages.
                            │
              ┌─────────────┴─────────────┐
              ▼                           ▼
-   ┌───────────────────┐       ┌────────────────────┐
-   │   images branch    │       │   GitHub Pages     │
-   │  (raw binaries)    │◀──────│  (built site)      │
-   │  orphan cleanup     │       └────────────────────┘
+   ┌───────────────────┐        ┌───────────────────┐
+   │   images branch   │        │   GitHub Pages    │
+   │  (raw binaries)   │◀─────  │  (built site)    │
+   │  orphan cleanup   │        └──────────────────┘
    └───────────────────┘
 ```
 
