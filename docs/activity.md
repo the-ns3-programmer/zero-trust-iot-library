@@ -1,7 +1,7 @@
 # Activity Log
 
 This page is an example of the contributor workflow described in
-[CONTRIBUTING.md](../CONTRIBUTING.md).
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Example entry
 
