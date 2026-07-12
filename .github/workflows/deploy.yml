@@ -1,0 +1,48 @@
+name: Docs Sync & Deploy
+
+# Fires only on pushes to main (i.e. after a feature/branch PR is merged).
+# The sync script commits back to main with "[skip ci]" in the message,
+# which GitHub natively honors to avoid an infinite loop.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write   # required so the bot can push to main and to the images branch
+
+concurrency:
+  group: docs-deploy
+  cancel-in-progress: false
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0        # full history needed for worktree/branch operations
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Configure git identity
+        run: |
+          git config user.name "docs-bot"
+          git config user.email "docs-bot@users.noreply.github.com"
+
+      - name: Transfer images, rewrite links, and clean orphans
+        run: python scripts/sync_images.py
+
+      - name: Install MkDocs and dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build MkDocs site
+        run: mkdocs build --strict
+
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force --clean
